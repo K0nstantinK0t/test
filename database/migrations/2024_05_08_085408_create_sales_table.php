@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
-            $table->integer('g_number');
+            $table->string('g_number');
             $table->date('date');
             $table->date('last_change_date');
             $table->string('supplier_article');
@@ -23,14 +23,14 @@ return new class extends Migration
             $table->integer('discount_percent');
             $table->boolean('is_supply');
             $table->boolean('is_realization');
-            $table->string('promo_code_discount');
+            $table->string('promo_code_discount')->nullable();
             $table->string('warehouse_name');
             $table->string('country_name');
             $table->string('oblast_okrug_name');
             $table->string('region_name');
             $table->string('income_id');
             $table->string('sale_id');
-            $table->string('odid');
+            $table->string('odid')->nullable();
             $table->string('spp');
             $table->string('for_pay');
             $table->string('finished_price');
@@ -39,7 +39,7 @@ return new class extends Migration
             $table->string('subject');
             $table->string('category');
             $table->string('brand');
-            $table->boolean('is_storno');
+            $table->boolean('is_storno')->nullable();
         });
     }
 

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('oreders', function (Blueprint $table) {
+        Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->string('g_number');
             $table->date('date');
@@ -20,18 +20,17 @@ return new class extends Migration
             $table->string('tech_size');
             $table->string('barcode');
             $table->string('total_price');
-            $table->string('number');
             $table->smallInteger('discount_percent');
             $table->string('warehouse_name');
             $table->string('oblast');
              $table->string('income_id');
-            $table->string('odid');
+            $table->string('odid')->nullable();
             $table->string('nm_id');
             $table->string('subject');
             $table->string('category');
             $table->string('brand');
             $table->boolean('is_cancel');
-            $table->date('cancel_dt');
+            $table->date('cancel_dt')->nullable();
         });
     }
 
@@ -40,6 +39,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('oreders');
+        Schema::dropIfExists('orders');
     }
 };
