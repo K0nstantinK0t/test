@@ -18,10 +18,10 @@ return new class extends Migration
             $table->string('supplier_article');
             $table->string('tech_size');
             $table->string('barcode');
-            $table->boolean('quantity');
+            $table->integer('quantity');
             $table->boolean('is_supply');
             $table->boolean('is_realization');
-            $table->boolean('quantity_full');
+            $table->integer('quantity_full');
             $table->string('warehouse_name');
             $table->boolean('in_way_to_client');
             $table->boolean('in_way_from_client');
